@@ -1,0 +1,40 @@
+nohup: ignoring input
+/nas-data/alim_workspace/rag-ubstream/api/main.py:44: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Will watch for changes in these directories: ['/nas-data/alim_workspace/rag-ubstream/api']
+INFO:     Uvicorn running on http://0.0.0.0:8006 (Press CTRL+C to quit)
+INFO:     Started reloader process [349664] using WatchFiles
+INFO:     Started server process [349689]
+INFO:     Waiting for application startup.
+/nas-data/alim_workspace/rag-ubstream/api/main.py:69: LangChainDeprecationWarning: The class `OllamaEmbeddings` was deprecated in LangChain 0.3.1 and will be removed in 1.0.0. An updated version of the class exists in the :class:`~langchain-ollama package and should be used instead. To use it run `pip install -U :class:`~langchain-ollama` and import as `from :class:`~langchain_ollama import OllamaEmbeddings``.
+  embeddings = OllamaEmbeddings(model=embedding_model_name)
+/nas-data/alim_workspace/rag-ubstream/api/main.py:70: LangChainDeprecationWarning: The class `Chroma` was deprecated in LangChain 0.2.9 and will be removed in 1.0. An updated version of the class exists in the :class:`~langchain-chroma package and should be used instead. To use it run `pip install -U :class:`~langchain-chroma` and import as `from :class:`~langchain_chroma import Chroma``.
+  vector_store = Chroma(persist_directory=db_dir, embedding_function=embeddings)
+/nas-data/alim_workspace/rag-ubstream/api/main.py:83: LangChainDeprecationWarning: The class `ChatOllama` was deprecated in LangChain 0.3.1 and will be removed in 1.0.0. An updated version of the class exists in the :class:`~langchain-ollama package and should be used instead. To use it run `pip install -U :class:`~langchain-ollama` and import as `from :class:`~langchain_ollama import ChatOllama``.
+  llm = ChatOllama(model=llm_model_name)
+INFO:     Application startup complete.
+Starting FastAPI API. Initializing RAG components...
+Loading vector store from ../chroma_db with embedding model nomic-embed-text...
+Vector store loaded successfully.
+Initializing Ollama LLM with model: llama3:latest...
+LLM initialized.
+RAG chain setup complete.
+INFO:     192.168.0.13:46968 - "GET /status HTTP/1.1" 200 OK
+INFO:     192.168.0.13:46968 - "OPTIONS /ask HTTP/1.1" 200 OK
+Received question: 'apa kabar'
+Inference time for 'apa kabar': 30.91 seconds
+INFO:     192.168.0.13:46968 - "POST /ask HTTP/1.1" 200 OK
+INFO:     192.168.0.13:56330 - "GET /status HTTP/1.1" 200 OK
+INFO:     192.168.0.13:56330 - "GET /status HTTP/1.1" 200 OK
+INFO:     192.168.0.13:38346 - "GET /status HTTP/1.1" 200 OK
+INFO:     192.168.0.13:38346 - "GET /status HTTP/1.1" 200 OK
+INFO:     192.168.0.13:53206 - "GET /status HTTP/1.1" 200 OK
+Received question: '什麼是OMO數位智慧商店？'
+Inference time for '什麼是OMO數位智慧商店？': 73.39 seconds
+INFO:     192.168.0.13:56508 - "POST /ask HTTP/1.1" 200 OK
+INFO:     192.168.0.13:45892 - "GET /status HTTP/1.1" 200 OK
