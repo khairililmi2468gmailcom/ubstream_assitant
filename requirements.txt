@@ -1,0 +1,8 @@
+requests
+beautifulsoup4
+lxml
+langchain
+langchain-community
+langchain-text-splitters
+chromadb
+brotli
